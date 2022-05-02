@@ -1,6 +1,9 @@
 function showCurrentTime() {
   let now = new Date();
   let date = now.getDate();
+  if (date < 10) {
+    date = `0${date}`;
+  }
   let day = document.querySelector("#day");
   day.innerHTML = `${date}`;
   let months = [
