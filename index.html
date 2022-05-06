@@ -22,16 +22,19 @@
       <div class="card mt-5 pl-5">
         <div class="card-body">
           <div class="info">
-          <h1><span id="city"></span><span id="temperature"></span><span class="unit"><a href="#" class="unit" id="celsius">°C|</a><a href="#" class="unit" id="fahrenheit">°F</a></span></h1>
+          <h1 id="city"></h1>
+            <h2><span id="temperature"></span><span class="unit"><a href="#" class="unit" id="celsius">°C|</a><a href="#" class="unit" id="fahrenheit">°F</a></span></h2>
     <img src="images/sun.svg" alt="sun" class="sun" id="sun" />
-          <div class="row">
-            <div class="col-2"><span id="day-of-week"></span></div>
-            <div class="col-10"><img src="images/humidity.svg" alt="humidity" class="humidity" /><span id="humidity">Humidity: %</span></div>
-            <div class="col-2"><span id="day"></span>/<span id="month"></span></div>
-            <div class="col-10"><img src="images/wind.svg" alt="wind" class="wind" /><span id="wind">Wind: km/h</span></div>
-            <div class="col-2"><span id="hour"></span><span id="minutes"></span></div>
-            <div class="col-10"><span id="description">Preview:</span></div>
-          </div>
+          <ul class="current-time">
+            <li id="day-of-week"></li>
+            <li><span id="day"></span>/<span id="month"></span></li>
+            <li><span id="hour"></span><span id="minutes"></span></li>
+        </ul>
+        <ul class="weather-description">
+            <li><img src="images/humidity.svg" alt="humidity" class="humidity" /><span id="humidity">Humidity: %</span></li>
+            <div><img src="images/wind.svg" alt="wind" class="wind" /><span id="wind">Wind: km/h</span></div>
+            <div><span id="description">Preview:</span></div>
+          </ul>
           </div>
         <form class="location" id="search-city">
         <input class="city" id="enter-city" type="text" placeholder="Enter a city..." autofocus="on"/>

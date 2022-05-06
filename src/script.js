@@ -78,9 +78,9 @@ function showCurrentTemp(response) {
   document.querySelector(
     "#humidity"
   ).innerHTML = `Humidity: ${response.data.main.humidity} %`;
-  document.querySelector(
-    "#wind"
-  ).innerHTML = `Wind: ${response.data.wind.speed} km/h`;
+  document.querySelector("#wind").innerHTML = `Wind: ${Math.round(
+    response.data.wind.speed
+  )} km/h`;
   document.querySelector(
     "#description"
   ).innerHTML = `Preview: ${response.data.weather[0].main}`;
