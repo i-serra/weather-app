@@ -49,6 +49,21 @@ small {
   text-decoration: none;
 }
 
+.active {
+  color: #fff;
+  font-weight: 500px;
+  cursor: default;
+  font-size: 22px;
+  position: relative;
+  top: -12px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.active:hover {
+  text-decoration: none;
+}
+
 .sun {
   width: 141px;
   position: absolute;

@@ -27,7 +27,7 @@ function showCurrentTime() {
   let daysOfWeek = [
     "Sunday",
     "Monday",
-    "Tuedsday",
+    "Tuesday",
     "Wednesday",
     "Thursday",
     "Friday",
@@ -73,6 +73,9 @@ form.addEventListener("submit", searchingCity);
 
 function showCurrentTemp(response) {
   let iconElement = document.querySelector("#main-icon");
+
+  celsiusTemperature = Math.round(response.data.main.temp);
+
   document.querySelector("#temperature").innerHTML = Math.round(
     response.data.main.temp
   );
@@ -113,23 +116,29 @@ document
 
 displayCity("Lisbon");
 
-//function showTemperatureFahrenheit(event) {
-// event.preventDefault();
-// let temperatureElement = document.querySelector("#temperature");
-// let temperature = temperatureElement.innerHTML;
-//temperatureElement.innerHTML = ` ${Math.round((temperature * 9) / 5 + 32)}`;
-//}
+function showFahrenheitTemperature(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  celsius.classList.add("active");
+  fahrenheit.classList.remove("active");
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round((celsiusTemperature * 9) / 5 + 32);
+}
 
-//let change = document.querySelector("#fahrenheit");
+let celsiusTemperature = null;
 
-//change.addEventListener("click", showTemperatureFahrenheit);
+let convertFahrenheit = document.querySelector("#fahrenheit");
 
-//function showTemperatureCelsius(event) {
-// event.preventDefault();
-// let temperatureCelsius = document.querySelector("#temperature");
-// temperatureCelsius.innerHTML = temp;
-//}
+convertFahrenheit.addEventListener("click", showFahrenheitTemperature);
 
-//let changeBack = document.querySelector("#celsius");
+function showCelsiusTemperature(event) {
+  event.preventDefault();
+  celsius.classList.remove("active");
+  fahrenheit.classList.add("active");
+  let temperatureCelsius = document.querySelector("#temperature");
+  temperatureCelsius.innerHTML = celsiusTemperature;
+}
 
-//changeBack.addEventListener("click", showTemperatureCelsius);
+let convertCelsius = document.querySelector("#celsius");
+
+convertCelsius.addEventListener("click", showCelsiusTemperature);
