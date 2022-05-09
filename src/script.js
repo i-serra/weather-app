@@ -72,6 +72,7 @@ let form = document.querySelector("#search-city");
 form.addEventListener("submit", searchingCity);
 
 function showCurrentTemp(response) {
+  let iconElement = document.querySelector("#main-icon");
   document.querySelector("#temperature").innerHTML = Math.round(
     response.data.main.temp
   );
@@ -85,6 +86,10 @@ function showCurrentTemp(response) {
     "#description"
   ).innerHTML = `Preview: ${response.data.weather[0].main}`;
   document.querySelector("#city").innerHTML = `${response.data.name}, `;
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 
 function showCurrentLocation(position) {
