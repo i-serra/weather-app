@@ -22,7 +22,7 @@ function showCurrentTime() {
   ];
   let month = months[now.getMonth()];
   let currentMonth = document.querySelector("#month");
-  currentMonth.innerHTML = `${month}`;
+  currentMonth.innerHTML = `${month} | `;
 
   let daysOfWeek = [
     "Sunday",
@@ -35,7 +35,7 @@ function showCurrentTime() {
   ];
   let currentDayOfWeek = daysOfWeek[now.getDay()];
   let weekDay = document.querySelector("#day-of-week");
-  weekDay.innerHTML = `${currentDayOfWeek},`;
+  weekDay.innerHTML = `${currentDayOfWeek} | `;
 
   let hours = now.getHours();
   if (hours < 10) {
@@ -88,7 +88,7 @@ function showCurrentTemp(response) {
   document.querySelector(
     "#description"
   ).innerHTML = `Preview: ${response.data.weather[0].main}`;
-  document.querySelector("#city").innerHTML = `${response.data.name}, `;
+  document.querySelector("#city").innerHTML = `${response.data.name}`;
   iconElement.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
