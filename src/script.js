@@ -62,7 +62,7 @@ function showCurrentTemp(response) {
   document.querySelector("#wind").innerHTML = `Wind: ${Math.round(response.data.wind.speed)} km/h`;
   document.querySelector("#description").innerHTML = `Preview: ${response.data.weather[0].main}`;
   document.querySelector("#city").innerHTML = `${response.data.name}`;
-  iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+  iconElement.setAttribute("src", `images/${response.data.weather[0].icon}.svg`);
   getForecast(response.data.coord);
 }
 
@@ -110,19 +110,34 @@ function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
   forecast.forEach(function (forecastDaily, index) {
-    if (index < 5) {
+    if (4 >= index && index <= 5) {
       forecastHTML =
         forecastHTML +
         `<div class="col">
       <div class="forecast-date">${formatDay(forecastDaily.dt)}</div>
       <div class="forecast-temperature"><span class="max-temp">${Math.round(forecastDaily.temp.max)}°</span>| <span class="min-temp">${Math.round(forecastDaily.temp.min)}°</span></div>
-      <img src="http://openweathermap.org/img/wn/${forecastDaily.weather[0].icon}@2x.png" />
+      <img 
+      src= "http://openweathermap.org/img/wn/${forecastDaily.weather[0].icon}@2x.png" />
     </div>`;
     }
   });
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
+
+function backgroundImage() {
+  dayNightImage = new Date();
+  change = dayNightImage.getHours();
+  if (7 >= change && change <= 19) {
+    document.getElementById("background").style.backgroundImage = "url('https://images.unsplash.com/photo-1460411794035-42aac080490a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80')";
+  } else {
+    document.getElementById("background").style.backgroundImage = "url('https://images.unsplash.com/photo-1599239666211-a0ddb49c6690?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032&q=80')";
+  }
+}
+
+setInterval(backgroundImage, 1000 * 60 * 60);
+
+backgroundImage();
 
 showCurrentTime();
 
