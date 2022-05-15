@@ -117,7 +117,7 @@ function displayForecast(response) {
       <div class="forecast-date">${formatDay(forecastDaily.dt)}</div>
       <div class="forecast-temperature"><span class="max-temp">${Math.round(forecastDaily.temp.max)}°</span>| <span class="min-temp">${Math.round(forecastDaily.temp.min)}°</span></div>
       <img 
-      src= "http://openweathermap.org/img/wn/${forecastDaily.weather[0].icon}@2x.png" />
+      src= "images/${forecastDaily.weather[0].icon}.svg" class="forecastIcons"/>
     </div>`;
     }
   });

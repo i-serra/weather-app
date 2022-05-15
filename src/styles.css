@@ -31,22 +31,14 @@ small {
 }
 
 #main-icon {
-  left: 440px;
-  top: 75px;
-  width: 158px;
+  left: 360px;
+  top: 92px;
+  width: 150px;
   position: absolute;
 }
 
-.day {
-  background-image: url("https://images.unsplash.com/photo-1577337473192-fec17938c468?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=874&q=80");
-}
-
-.night {
-  background-image: url("https://images.unsplash.com/photo-1599239666211-a0ddb49c6690?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032&q=80");
-}
-
 .card {
-  max-width: 70%;
+  max-width: 61%;
   display: block;
   margin: 0 auto;
   border: 2px solid #fff;
@@ -82,13 +74,6 @@ small {
 a.active {
   font-weight: normal;
   font-size: 25px;
-}
-
-.sun {
-  width: 160px;
-  position: absolute;
-  top: 75px;
-  left: 399px;
 }
 
 .weather-description {
@@ -147,14 +132,10 @@ a.active {
   margin: 64px 0 0 0;
 }
 
-.clouds,
-.cloudy,
-.rain-cloud,
-.snow,
-.thunder {
-  width: 50px;
-  display: block;
-  margin: 0 auto;
+.forecastIcons {
+  width: 80px;
+  margin-top: -15px;
+  margin-bottom: -12px;
 }
 
 .search:hover {
